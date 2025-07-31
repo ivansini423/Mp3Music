@@ -1,13 +1,18 @@
-import express from 'express';
+const express = require('express');
+const cors = require('cors');
 
 const app = express();
+const PORT = 3000;
+
+
+app.use(cors());
+
 
 app.get('/', (req, res) => {
-    res.send('Hello, World!');
+  res.json({ mensaje: 'Servidor Node.js con Express está funcionando' });
 });
 
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+const server = app.listen(PORT, () => {
+  const address = server.address().address === '::' ? 'localhost' : server.address().address;
+  console.log(`Servidor escuchando en http://${address}:${PORT}`);
 });
-
