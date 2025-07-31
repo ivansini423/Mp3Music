@@ -11,9 +11,6 @@ app.get('/', (req, res) => {
 
 const PORT = 3000;
 
-
-
-
 const connection = async () => {
     const con = await mysql.createConnection({
         host: '127.0.0.1',
@@ -26,7 +23,8 @@ const connection = async () => {
 }
 test('conexion a servidor', async () => {
     app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
+        console.log(`Servidor corriendo en: http://localhost:${PORT}`);
+
     });
 });
 test('conexion a base de datos', async () => { await connection() })
