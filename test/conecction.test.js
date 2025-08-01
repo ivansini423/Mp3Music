@@ -14,10 +14,6 @@ app.get('/', (req, res) => {
     res.json({ mensaje: 'Servidor Node.js con Express está funcionando' });
 });
 
-function(){
-    
-}
-
 
 const connection = async () => {
     const con = await mysql.createConnection({

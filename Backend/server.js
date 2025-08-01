@@ -8,6 +8,8 @@ app.use(cors());
 
 app.get('/', (req, res) => {
     res.json({ mensaje: 'Servidor Node.js con Express está funcionando' });
+
+    
 });
 
 const server = app.listen(PORT, () => {
