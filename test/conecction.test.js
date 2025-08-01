@@ -1,15 +1,23 @@
 
 const express = require('express')
 const mysql = require('mysql2/promise')
+const cors = require('cors');
+
 
 
 const app = express();
+const PORT = 3000;
+
+app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send('Hello, World!');
+    res.json({ mensaje: 'Servidor Node.js con Express está funcionando' });
 });
 
-const PORT = 3000;
+function(){
+    
+}
+
 
 const connection = async () => {
     const con = await mysql.createConnection({
@@ -22,10 +30,11 @@ const connection = async () => {
     console.log('connected as id ' + con.threadId);
 }
 test('conexion a servidor', async () => {
-    app.listen(PORT, () => {
-        console.log(`Servidor corriendo en: http://localhost:${PORT}`);
-
-    });
+   
+const server = app.listen(PORT, () => {
+    const address = server.address().address === '::' ? 'localhost' : server.address().address;
+    console.log(`Servidor escuchando en http://${address}:${PORT}`);
+});
 });
 test('conexion a base de datos', async () => { await connection() })
 
