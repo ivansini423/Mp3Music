@@ -36,7 +36,7 @@ function busquedaBinaria(arr, target){
         }else if(arr[middle] < target){
             start = middle + 1
         }else{
-            end = middle - 
+            end = middle - 1
         }
     }
     return -1
