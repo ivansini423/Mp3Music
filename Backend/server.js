@@ -7,7 +7,11 @@ const PORT = 3000;
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.json({ mensaje: 'Servidor Node.js con Express está funcionando' });
+    res.json({ 
+        mensaje: 'Servidor Node.js con Express está funcionando',
+        estado: 'Conexión establecida',
+        fecha: new Date().toISOString()
+    }); 
 
     
 });
