@@ -24,7 +24,7 @@ const fetch = require('node-fetch'); // Asegúrate de instalarlo: npm install no
 //         await server.close();
 //     });
 
-//     test('conexion a servidor', () => {
+//     test('conexion a servidor', () tK=> {
 //         const address = server.address().address === '::' ? 'localhost' : server.address().address;
 //         console.log(`Servidor escuchando en http://${address}:${PORT}`);
 //         expect(server.listening).toBe(true);
@@ -36,7 +36,7 @@ it('conexion de react a servidor con fetch', () => {
     const url = 'http://localhost:3000/';
     return fetch(url)
         .then(response => response.json())
-        .then(data => {
+        .then(data => {|
             console.log(data);
         });
 });
