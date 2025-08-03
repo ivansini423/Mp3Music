@@ -17,6 +17,7 @@
     "express": "^5.1.0",
     "mysql": "^2.18.1",
     "mysql2": "^3.14.3",
+    "node-fetch": "^2.7.0",
     "react": "19.0.0",
     "react-native": "0.79.5"
   },
