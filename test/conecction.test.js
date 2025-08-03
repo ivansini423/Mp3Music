@@ -1,7 +1,7 @@
-const express = require('express');
-const mysql = require('mysql2/promise');
-const cors = require('cors');
-const fetch = require('node-fetch'); // Asegúrate de instalarlo: npm install node-fetch
+// const express = require('express');
+// const mysql = require('mysql2/promise');
+// const cors = require('cors');
+const fetch = require('node-fetch'); 
 
 // describe('conexion a servidor', () => {
 //     let server;
@@ -24,7 +24,7 @@ const fetch = require('node-fetch'); // Asegúrate de instalarlo: npm install no
 //         await server.close();
 //     });
 
-//     test('conexion a servidor', () => {
+//     test('conexion a servidor', () tK=> {
 //         const address = server.address().address === '::' ? 'localhost' : server.address().address;
 //         console.log(`Servidor escuchando en http://${address}:${PORT}`);
 //         expect(server.listening).toBe(true);

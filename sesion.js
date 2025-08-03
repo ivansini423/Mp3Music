@@ -29,14 +29,13 @@
 function busquedaBinaria(arr, target){
     let start = 0
     let end = arr.length - 1
-    while(start <= end){
-        let middle = Math.floor((start + end)/2)
+    while(start <= end){        let middle = Math.floor((start + end)/2)
         if (arr[middle] === target) {
             return middle;
         }else if(arr[middle] < target){
             start = middle + 1
         }else{
-            end = middle - 
+            end = middle - 1
         }
     }
     return -1
