@@ -1,7 +1,7 @@
 // const express = require('express');
 // const mysql = require('mysql2/promise');
 // const cors = require('cors');
-const fetch = require('node-fetch'); // Asegúrate de instalarlo: npm install node-fetch
+const fetch = require('node-fetch'); 
 
 // describe('conexion a servidor', () => {
 //     let server;
