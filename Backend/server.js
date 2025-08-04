@@ -20,4 +20,3 @@ const server = app.listen(PORT, () => {
     const address = server.address().address === '::' ? 'localhost' : server.address().address;
     console.log(`Servidor escuchando en http://${address}:${PORT}`);
 });
-
