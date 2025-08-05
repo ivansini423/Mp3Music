@@ -3,40 +3,14 @@
 // const cors = require('cors');
 const fetch = require('node-fetch'); 
 
-// describe('conexion a servidor', () => {
-//     let server;
-//     const app = express();
-//     const PORT = 3000;
+describe('Conexion hacia react native usando fetch', () => {
+    it('debería conectarse al servidor y recibir una respuesta JSON válida', async () => {
+        const url = 'http://localhost:3000/';
+        const response = await fetch(url);
+        const data = await response.json();
 
-//     app.use(cors());
-
-//     app.get('/', (req, res) => {
-//         res.json({ mensaje: 'Servidor Node.js con Express está funcionando' });
-//     });
-
-//     beforeAll(async () => {
-//         server = await new Promise((resolve) => {
-//             const srv = app.listen(PORT, () => resolve(srv));
-//         });
-//     });
-
-//     afterAll(async () => {
-//         await server.close();
-//     });
-
-//     test('conexion a servidor', () tK=> {
-//         const address = server.address().address === '::' ? 'localhost' : server.address().address;
-//         console.log(`Servidor escuchando en http://${address}:${PORT}`);
-//         expect(server.listening).toBe(true);
-//     });
-// });
-
-
-it('conexion de react a servidor con fetch', () => {
-    const url = 'http://localhost:3000/';
-    return fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        });
-});
+        expect(response.ok).toBe(true);
+        expect(data).toHaveProperty('mensaje', 'Servidor Node.js con Express está funcionando');
+        expect(data).toHaveProperty('estado', 'Conexión establecida');
+    });
+})

@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 
@@ -20,4 +20,3 @@ const server = app.listen(PORT, () => {
     const address = server.address().address === '::' ? 'localhost' : server.address().address;
     console.log(`Servidor escuchando en http://${address}:${PORT}`);
 });
-
