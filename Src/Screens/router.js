@@ -8,10 +8,10 @@ const Stack = createStackNavigator();
 const Router = () => {
     return (
         <NavigationContainer>
-            {/* Es una buena práctica ocultar el encabezado en las pantallas de bienvenida/inicio de sesión */}
             <Stack.Navigator screenOptions={{ headerShown: false }}>
                 <Stack.Screen name="App" component={App} />
                 <Stack.Screen name="login" component={Login} />
+                 {/*mas pantallas  */}
             </Stack.Navigator>
         </NavigationContainer>
     );
