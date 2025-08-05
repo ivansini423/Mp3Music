@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { StatusBar } from 'expo-status-bar';
 import { View, Text, Image, StyleSheet, TouchableOpacity, Animated, TextInput } from "react-native";
-
+import { useNavigation } from '@react-navigation/native';
 function App() {
-  const [form, setForm] = useState({ username: '', password: '' });
+  const navigation = useNavigation()
   const scaleValue = new Animated.Value(1);
   const fadeValue = new Animated.Value(0);
 
@@ -31,16 +31,16 @@ function App() {
     }).start();
   };
 
-  const handleChange = (name, value) => {
-    setForm({ ...form, [name]: value });
-  };
+const onePressLogin = () => {
+  navigation.navigate('login')
+}
 
   return (
     <View style={styles.background}>
       <Animated.View style={[styles.content, { opacity: fadeValue }]}>
         <Image
           style={styles.image}
-          source={require('./assets/logomp3.png')}          
+          source={require('../../assets/logomp3.png')}          
         />
         <Text style={styles.title}>Bienvenido a BeatWave</Text>
         <Text style={styles.subtitle}>Disfruta de tu música favorita en cualquier momento y lugar.</Text>
@@ -52,6 +52,7 @@ function App() {
             style={styles.button}
             onPressIn={handlePressIn}
             onPressOut={handlePressOut}
+            onPress={onePressLogin}
             activeOpacity={0.7}
           >
             <Text style={styles.buttonText}>Continuar</Text>

@@ -4,13 +4,13 @@
 const fetch = require('node-fetch'); 
 
 describe('Conexion hacia react native usando fetch', () => {
-    it('conexion de react a servidor con fetch', () => {
+    it('debería conectarse al servidor y recibir una respuesta JSON válida', async () => {
         const url = 'http://localhost:3000/';
-        return fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-            });
+        const response = await fetch(url);
+        const data = await response.json();
+
+        expect(response.ok).toBe(true);
+        expect(data).toHaveProperty('mensaje', 'Servidor Node.js con Express está funcionando');
+        expect(data).toHaveProperty('estado', 'Conexión establecida');
     });
 })
-

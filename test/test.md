@@ -4,7 +4,7 @@
 
 - npm test
 - npm run test
-- cual quier comando ejecutara el test
+- cualquier comando ejecutara el test
 
 ## Instalar test
 
